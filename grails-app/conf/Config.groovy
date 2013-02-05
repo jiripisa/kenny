@@ -68,6 +68,11 @@ environments {
         log4j = {
             appenders {
                 'null' name: "stacktrace"
+                rollingFile name: "appLog", maxFileSize: "1024kB", file: "${System.env['OPENSHIFT_DATA_DIR']}/kenny.log"
+            }
+            root {
+                trace 'appLog'
+                additivity = true
             }
         }
         // TODO: grails.serverURL = "http://www.changeme.com"
