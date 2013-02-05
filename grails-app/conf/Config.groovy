@@ -65,6 +65,11 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
+        log4j = {
+            appenders {
+                'null' name: "stacktrace"
+            }
+        }
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
